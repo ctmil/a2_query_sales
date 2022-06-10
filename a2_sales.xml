@@ -43,4 +43,58 @@
             sequence="10"
             groups="sales_team.group_sale_salesman"/>
 
+
+
+    <record id="a2_account_padron_view_tree" model="ir.ui.view">
+        <field name="name">a2.account.padron.view.tree</field>
+        <field name="model">a2.account.padron</field>
+        <field name="arch" type="xml">
+            <tree string="A2 Account Padron">
+                <field name="column1" />
+                <field name="date1" />
+                <field name="date2" />
+                <field name="date3" />
+                <field name="cuit" />
+                <field name="column2" />
+                <field name="column3" />
+                <field name="column4" />
+                <field name="amount" />
+                <field name="column5" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_a2_account_padron" model="ir.actions.act_window">
+        <field name="name">A2 Account Padron</field>
+        <field name="res_model">a2.account.padron</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_a2_account_padron"
+            name="A2 Account Padron"
+	    parent="sale.menu_sale_report"
+	    action="action_a2_account_padron"
+	    sequence="10" />
+
+
+
+	<!-- act_window id="res_partner_find"
+    		name="Find Partner"
+    		res_model="barcode.action"
+    		view_mode="form"
+    		view_type="form"
+    		context="{'default_model': 'res.partner', 'default_method': 'find_res_partner_by_ref_using_barcode'}"
+	target="new"/ -->
+
+	<record id="res_partner_find" model="ir.actions.act_window">
+		    <field name="name">Find Partner</field>
+		    <field name="res_model">barcode.action</field>
+		    <field name="view_mode">form</field>
+		    <field name="context">{'default_model': 'res.partner', 'default_method': 'find_res_partner_by_ref_using_barcode'}</field>
+	</record>
+
+	<menuitem id="menu_orders_customers" name="Find partners"
+    		action="res_partner_find"
+    		parent="base.menu_administration"/>
+
 </odoo>

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_a2_sales,a2.sales,model_a2_sales,sales_team.group_sale_salesman,1,1,1,1
+access_a2_account_padron,a2.account.padron,model_a2_account_padron,,1,1,1,1
